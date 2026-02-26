@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://2a1pj0tvxxu3"]
+
+[ext_resource type="Script" uid="uid://brp65fmumy2vc" path="res://test_area.gd" id="1_64fjj"]
+[ext_resource type="StyleBox" uid="uid://b8oyay8vks5ak" path="res://style_box_flat.tres" id="2_rfpkf"]
+[ext_resource type="StyleBox" uid="uid://86qa0bt8fhww" path="res://layer_selected.tres" id="3_od0h0"]
+[ext_resource type="PackedScene" uid="uid://df5mm6hp3uruv" path="res://layer.tscn" id="4_od0h0"]
+
+[node name="TestArea" type="MarginContainer" unique_id=402657173 node_paths=PackedStringArray("node_add_layer_button", "node_file_dialog", "node_layer_container", "node_sprite_container", "node_color_picker")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+script = ExtResource("1_64fjj")
+node_add_layer_button = NodePath("PanelContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer/HBoxContainer/AddLayer")
+node_file_dialog = NodePath("FileDialog")
+node_layer_container = NodePath("PanelContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/LayerContainer")
+node_sprite_container = NodePath("PanelContainer/HBoxContainer/SpriteContainer")
+node_color_picker = NodePath("PanelContainer/HBoxContainer/VBoxContainer/ColorPicker")
+layer_scene = ExtResource("4_od0h0")
+layer_selected_style = ExtResource("3_od0h0")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1190479503]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_rfpkf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1965385399]
+layout_mode = 2
+alignment = 1
+
+[node name="SpriteContainer" type="Control" parent="PanelContainer/HBoxContainer" unique_id=1738593487]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=811769312]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorPicker" type="ColorPicker" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=861170261]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+edit_alpha = false
+edit_intensity = false
+can_add_swatches = false
+color_modes_visible = false
+sliders_visible = false
+presets_visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=1452764438]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("2_rfpkf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer/PanelContainer" unique_id=1120113963]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=22019540]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_rfpkf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer" unique_id=694918569]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=1627821235]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Name"
+
+[node name="AddLayer" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=925555405]
+layout_mode = 2
+size_flags_vertical = 4
+text = "+"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1656814495]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LayerContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer" unique_id=169215896]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="FileDialog" type="FileDialog" parent="." unique_id=864813383]
+oversampling_override = 1.0
+title = "Open File(s)"
+position = Vector2i(0, 36)
+file_mode = 1
+access = 2
+filters = PackedStringArray("*.png,*.jpg,*.jpeg;Image Files;image/png,image/jpeg")
+
+[connection signal="color_changed" from="PanelContainer/HBoxContainer/VBoxContainer/ColorPicker" to="." method="_on_color_picker_color_changed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="files_selected" from="FileDialog" to="." method="_on_file_dialog_files_selected"]

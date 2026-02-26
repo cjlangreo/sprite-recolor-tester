@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://df5mm6hp3uruv"]
+
+[ext_resource type="StyleBox" uid="uid://86qa0bt8fhww" path="res://layer_selected.tres" id="1_xcwe4"]
+[ext_resource type="Script" uid="uid://rfu02cpa72v1" path="res://layer.gd" id="2_xcwe4"]
+[ext_resource type="Shader" uid="uid://b4r2urgx6nxnt" path="res://shader.gdshader" id="3_igqqf"]
+
+[node name="Layer" type="PanelContainer" unique_id=416457369 node_paths=PackedStringArray("node_up_layer", "node_down_layer", "node_close_layer", "node_name_label", "node_color_rect") groups=["Layer"]]
+offset_right = 276.0
+offset_bottom = 41.0
+script = ExtResource("2_xcwe4")
+node_up_layer = NodePath("HBoxContainer/Button")
+node_down_layer = NodePath("HBoxContainer/Button2")
+node_close_layer = NodePath("HBoxContainer/Button3")
+node_name_label = NodePath("HBoxContainer/Label")
+node_color_rect = NodePath("HBoxContainer/ColorRect")
+selected_style = ExtResource("1_xcwe4")
+shader = ExtResource("3_igqqf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=561056823]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer" unique_id=1682918789]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1913113648]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "[sprite name here]"
+
+[node name="Button" type="Button" parent="HBoxContainer" unique_id=1216301142]
+layout_mode = 2
+text = "↑"
+
+[node name="Button2" type="Button" parent="HBoxContainer" unique_id=1952612717]
+layout_mode = 2
+text = "↓"
+
+[node name="Button3" type="Button" parent="HBoxContainer" unique_id=2096582634]
+layout_mode = 2
+text = "X"
