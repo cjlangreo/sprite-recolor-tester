@@ -24,6 +24,10 @@ window/stretch/mode="canvas_items"
 
 Layer=""
 
+[gui]
+
+theme/custom="uid://b2yphvav0ih7j"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
