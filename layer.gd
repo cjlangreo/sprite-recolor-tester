@@ -2,7 +2,7 @@ extends PanelContainer
 class_name Layer
 
 
-var node_sprite: Sprite2D
+var node_sprite: AnimatedSprite2D
 @export_group("Nodes", "node_")
 @export var node_up_layer: Button
 @export var node_down_layer: Button

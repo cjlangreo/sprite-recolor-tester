@@ -12,9 +12,15 @@ class_name SpritesheetSettings
 @export var frame_number_component: PackedScene
 
 
+@export var frame_spinner: SpinBox
+
+@export var cols_spinner: SpinBox
+@export var rows_spinner: SpinBox
+
 signal spritesheet_toggled
 signal animatable_toggled
 signal frame_index_changed
+signal col_row_updated
 
 func _ready() -> void:
   enabled_checkbox.toggled.connect(_toggle_settings_container_visibility)
@@ -28,11 +34,19 @@ func _ready() -> void:
   _add_frame()
 
   _assign_frame_numbers()
+  
+  cols_spinner.value_changed.connect(_col_row_updated)
+  rows_spinner.value_changed.connect(_col_row_updated)
 
+  frame_spinner.value_changed.connect(frame_index_changed.emit)
+
+
+func _col_row_updated(_value: int) -> void:
+  col_row_updated.emit(cols_spinner.value, rows_spinner.value)
 
 func _toggle_settings_container_visibility(toggled_on: bool) -> void:
   settings_container.visible = toggled_on
-  spritesheet_toggled.emit(toggled_on)
+  spritesheet_toggled.emit(toggled_on, cols_spinner.value, rows_spinner.value)
 
 func _toggle_animatable(toggled_on: bool) -> void:
   frames_container.visible = toggled_on
