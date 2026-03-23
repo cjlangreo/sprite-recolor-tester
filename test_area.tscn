@@ -72,12 +72,15 @@ text = "Settings"
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="SpritesheetSettingsContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer" unique_id=1130079127 node_paths=PackedStringArray("enabled_checkbox", "settings_container")]
+[node name="SpritesheetSettingsContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer" unique_id=1130079127 node_paths=PackedStringArray("enabled_checkbox", "settings_container", "animated_checkbox", "frame_spiner_container", "frames_container")]
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("5_xdpsd")
 enabled_checkbox = NodePath("VBoxContainer/HBoxContainer/SpritesheetCheckbox")
 settings_container = NodePath("VBoxContainer/SpritesheetSettings")
+animated_checkbox = NodePath("VBoxContainer/SpritesheetSettings/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/AnimatedCheckBox")
+frame_spiner_container = NodePath("VBoxContainer/SpritesheetSettings/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/FrameSpinnerContainer")
+frames_container = NodePath("VBoxContainer/SpritesheetSettings/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer/HBoxContainer/ScrollContainer/FramesContainer")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer/SpritesheetSettingsContainer" unique_id=948770355]
 layout_mode = 2
