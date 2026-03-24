@@ -93,8 +93,8 @@ func arrange_layer(layer: Layer, direction: int) -> void:
 
 func _on_file_dialog_files_selected(paths: PackedStringArray) -> void:
   for path: String in paths:
-    var sprite: AnimatedSprite2D = AnimatedSprite2D.new()
-    var sprite_frames: SpriteFrames = SpriteFrames.new()
+    var sprite: Sprite2D = Sprite2D.new()
+    sprite.texture = load(path)
 
     var layer: Layer = layer_scene.instantiate()
     layer.node_up_layer.pressed.connect(arrange_layer.bind(layer, 1))
