@@ -42,7 +42,6 @@ func _set_type_label() -> void:
 func _add_shader_to_sprite() -> void:
   node_sprite.material = ShaderMaterial.new()
   node_sprite.material.shader = shader
-  node_close_layer.pressed.connect(remove_layer)
 
 
 func remove_layer() -> void:
