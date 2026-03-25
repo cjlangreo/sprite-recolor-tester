@@ -31,6 +31,11 @@ var type: int:
 func _ready() -> void:
   node_close_layer.pressed.connect(remove_layer)
   _add_shader_to_sprite()
+  _set_type_label()
+
+func _set_type_label() -> void:
+  node_type_label.text = "S" if node_sprite is Sprite2D else "SS"
+  node_type_label.add_theme_color_override("font_color", BLUE_COLOR if node_sprite is Sprite2D else RED_COLOR)
 
 
 
