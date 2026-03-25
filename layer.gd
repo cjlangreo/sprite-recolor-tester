@@ -29,6 +29,7 @@ var type: int:
 @export var shader: Shader
 
 func _ready() -> void:
+  node_close_layer.pressed.connect(remove_layer)
   _add_shader_to_sprite()
 
 
