@@ -2,7 +2,8 @@ extends PanelContainer
 class_name Layer
 
 
-var node_sprite: Sprite2D
+const BLUE_COLOR: Color = Color(0.0, 0.576, 1.0)
+const RED_COLOR: Color = Color(1.0, 0.157, 0.0)
 @export_group("Nodes", "node_")
 @export var node_up_layer: Button
 @export var node_down_layer: Button
