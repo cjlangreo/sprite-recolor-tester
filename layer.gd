@@ -17,6 +17,7 @@ var type: int:
 @export var node_close_layer: Button
 @export var node_name_label: Label
 @export var node_color_rect: ColorRect
+@export var node_type_label: Label
 
 @onready var color: Color = Color.WHITE:
   set(value):
