@@ -7,6 +7,10 @@ const RED_COLOR: Color = Color(1.0, 0.157, 0.0)
 
 
 var node_sprite: Node2D
+var type: int:
+  get:
+    return 0 if node_sprite is Sprite2D else 1
+
 @export_group("Nodes", "node_")
 @export var node_up_layer: Button
 @export var node_down_layer: Button
