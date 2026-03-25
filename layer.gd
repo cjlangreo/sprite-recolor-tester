@@ -4,6 +4,9 @@ class_name Layer
 
 const BLUE_COLOR: Color = Color(0.0, 0.576, 1.0)
 const RED_COLOR: Color = Color(1.0, 0.157, 0.0)
+
+
+var node_sprite: Node2D
 @export_group("Nodes", "node_")
 @export var node_up_layer: Button
 @export var node_down_layer: Button
